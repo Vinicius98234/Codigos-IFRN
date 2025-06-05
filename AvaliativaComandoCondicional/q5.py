@@ -1,27 +1,30 @@
-print("Programa que leia o número de minutos que um veículo permaneceu no estacionamento e exiba o valor a ser pago pelo responsável.") #Exibe o que o programa faz
+print("Programa que calcula o valor a ser pago no estacionamento com base no tempo de permanência.")  
 
-permanencia = int(input("Quanto tempo em minutos seu carro passou no estacionamento? "))
-horas = permanencia/60
+permanencia = int(input("Quanto tempo em minutos seu carro passou no estacionamento? "))  
 
-tarifa1 = 8 #Tarifa das primeira 2 horas
-tarifa2 = 5 #Tarifa de 3 as 4 horas
-tarifa3 = 3 #Tarifa de 4 as 12 horas
-tarifafix = 30 # Tarifa fixa a partir das 12 horas
+horas = permanencia // 60  # Horas completas  
+minutos = permanencia % 60  # Minutos excedentes  
 
-if horas <= 2: 
-    valpago = tarifa1 * horas  # Tarifa 1 * a quantidade de horas
-    print("Você passou", permanencia, "minutos no estacionamento. O valor a ser pago é de R$", valpago)
-else:
-    if horas <= 4:
-        valpago = (2 * tarifa1) + ((horas-2) * tarifa2) # valor pago pelas duas primeiras horas e soma com as ultimas horas
-        print("Você passou", permanencia, "minutos no estacionamento. O valor a ser pago é de R$", valpago)
-    else:
-        if horas < 12:
-            valpago = (2 * tarifa1) + (2 * tarifa2) + ((horas - 4) * tarifa3) # valor pago pelas duas primeiras horas e a soma entre as 3 e 4 horas e o resto das horas até 12 horas
-            print("Você passou", permanencia, "minutos no estacionamento. O valor a ser pago é de R$", valpago)
-        else:
-            valpago = tarifafix # Valor fixo a partir das 12 horas
-            print("Você passou", permanencia, "minutos no estacionamento, que é equivalente a mais de 12 horas, então, O valor a ser pago é de R$", valpago)
-    
-    
+# Se houver minutos excedentes, conta +1 hora  
+if minutos > 0:  
+    horas += 1  
 
+# Definição das tarifas  
+tarifa1 = 8   # R$/hora (primeiras 2 horas)  
+tarifa2 = 5   # R$/hora (3ª e 4ª horas)  
+tarifa3 = 3   # R$/hora (5ª à 12ª horas)  
+tarifa_fixa = 30  # Fixo após 12 horas  
+
+# Cálculo do valor  
+if horas <= 2:  
+    valor_pago = horas * tarifa1  
+elif horas <= 4:  
+    valor_pago = (2 * tarifa1) + ((horas - 2) * tarifa2)  
+elif horas < 12:  
+    valor_pago = (2 * tarifa1) + (2 * tarifa2) + ((horas - 4) * tarifa3)  
+else:  
+    valor_pago = tarifa_fixa  
+
+# Exibição do resultado (sem str(), sem f-string, sem .format())  
+print("Você passou", permanencia, "minutos (", horas, "horas) no estacionamento.")  
+print("O valor a ser pago é de R$", valor_pago, ".00")  
