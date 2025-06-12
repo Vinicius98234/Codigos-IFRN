@@ -8,6 +8,6 @@ while contador <= n:
     fatorial *= contador
     contador += 1
     
-for x in range(n + 1, m - 1):   
+for x in range(n + 1, m ):   
     if fatorial % x == 0:
         print(x, "é um Jaime de", n)
