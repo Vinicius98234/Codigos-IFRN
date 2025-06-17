@@ -1,6 +1,6 @@
 import random
 palavras = ("Abacate", "Lima", "Abacaxi")
-segredo = palavras [random.randint(0,2)]
+segredo = palavras [random.randint(0,len(palavras)-1)]
 segredo = segredo.lower()
 visivel = "_" * len(segredo)
 
