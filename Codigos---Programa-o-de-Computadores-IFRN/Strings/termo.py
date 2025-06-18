@@ -8,6 +8,8 @@ tentativas = 0
 
 while visivel != segredo:
     if tentativas <= 4:
+        print("TERMO")
+        print("Você tem apenas 4 tentativas!")
         print (visivel)
         letra = input("Diga uma letra: ")
         letra = letra.upper()
