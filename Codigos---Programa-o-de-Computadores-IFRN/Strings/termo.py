@@ -27,7 +27,7 @@ while visivel != segredo:
                 visivel = novovisual
                 tentativas += 1
         else:
-            print("Digite apenas uma letra por vez!!")
+            print("Digite uma letra somente!!")
             print("Tente novamente!")
     else:
         print("Acabou o numero de chances")
