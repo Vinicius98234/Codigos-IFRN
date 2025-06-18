@@ -11,7 +11,7 @@ while visivel != segredo:
         print (visivel)
         letra = input("Diga uma letra: ")
         letra = letra.upper()
-        if len(letra) < 2:
+        if len(letra) == 1:
             for l in visivel:
                 if l == letra:
                     print("Você já disse essa letra!")
