@@ -39,7 +39,7 @@ while visivel != segredo:
             print("Você acertou a chance de ouro!")
             break
         else:
-            print("Você é burro! A palavra era:", segredo)
+            print("Você errou! A palavra era:", segredo)
             break
 else:
     print("Você achou a palavra ela era:", segredo)
