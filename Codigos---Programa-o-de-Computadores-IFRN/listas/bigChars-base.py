@@ -17,4 +17,16 @@ bigchars = [
 "AAAAAAA                   AAAAAAABBBBBBBBBBBBBBBBB           CCCCCCCCCCCCCDDDDDDDDDDDDD        EEEEEEEEEEEEEEEEEEEEEEFFFFFFFFFFF                   GGGGGG   GGGGHHHHHHHHH     HHHHHHHHHIIIIIIIIII     JJJJJJJJJ       KKKKKKKKK    KKKKKKKLLLLLLLLLLLLLLLLLLLLLLLLMMMMMMMM               MMMMMMMMNNNNNNNN         NNNNNNN     OOOOOOOOO     PPPPPPPPPP               QQQQQQQQ::::QQRRRRRRRR     RRRRRRR SSSSSSSSSSSSSSS         TTTTTTTTTTT            UUUUUUUUU                  VVV                        WWW             WWW            XXXXXXX       XXXXXXX    YYYYYYYYYYYYY    ZZZZZZZZZZZZZZZZZZZ     000000000     11111111111122222222222222222222 333333333333333           4444444444     555555555          666666666     77777777                 888888888        99999999        "
 ]
 
-nome = input ("Digite seu nome: ")
+nome = input ("Digite seu nome: ").upper()
+for letra in nome:
+    maiorPosLetra = -1  
+    menorPosLetra = 100000
+    for linha in bigchars:
+        posInicial = linha.find(letra)
+        if posInicial < menorPosLetra:
+            menorPosLetra = posInicial
+        posFinial = linha.rfind(letra)
+        if posFinial > maiorPosLetra:
+            maiorPosLetra = posFinial
+    for linha in bigchars:
+        print(linha[menorPosLetra:maiorPosLetra + 1])
