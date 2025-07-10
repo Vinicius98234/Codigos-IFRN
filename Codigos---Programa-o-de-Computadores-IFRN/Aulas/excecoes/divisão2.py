@@ -8,3 +8,4 @@ while True:
         print("Erro na digitação!!!")
     except ZeroDivisionError as e2:
         print("Erro na divisão por zero!!!")
+    
