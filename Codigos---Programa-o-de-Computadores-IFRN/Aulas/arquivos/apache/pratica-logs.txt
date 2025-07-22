@@ -16,4 +16,4 @@
 6) Salve um arquivo com a lista de IPs (um por linha) que 
    fizeram pedidos ao servidor. O nome desse arquivo deve 
    ser "ips.txt"
-   
+   FEITO
