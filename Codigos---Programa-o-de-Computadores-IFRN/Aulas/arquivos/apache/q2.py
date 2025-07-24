@@ -3,18 +3,17 @@ import sys
 nomeArqLog = "apache.logs"
 try:
     fdLogs = open (nomeArqLog, "r")
-    logsMinuto = {}
+    logsHora = {}
     for log in fdLogs:
         inicioTempo = log.find('[')
         FimTempo = log.find(']')
         tempo = log[inicioTempo+1:FimTempo][0:17]
-        if tempo in logsMinuto:
-            logsMinuto[tempo] += 1
+        if tempo in logsHora: 
+            logsHora [tempo] += 1
         else:
-            logsMinuto[tempo] = 1
+            logsHora [tempo] = 1
     fdLogs.close()
-    for minuto in logsMinuto:
-        print(f"{minuto} => {logsMinuto[minuto]}")
+    print(max (logsHora.items(),key=lambda item:item[1]))
 except FileNotFoundError as e:
     print("O arquivo {nomeArqLog} não esta acessivel")
     exit()
