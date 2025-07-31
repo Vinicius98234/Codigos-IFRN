@@ -9,7 +9,7 @@ RESET = '\033[0m'    # Resetar cor
 print("DUETO\n")
 
 palavras = ["pleno", "risco", "claro", "trago", "forte", "vento", "chave", "basta", "nuvem", "saiba", 
-            "lente", "mente", "copos", "brisa", "tocar"]
+            "lente", "mente", "copos", "brisa", "tocar"] # Palavras aleatórias 
 
 # Selecionar palavras secretas
 indice1 = random.randint(0, len(palavras)-1)
@@ -24,8 +24,8 @@ while palavra1 == palavra2:
 tentativas = 0
 acertou_palavra1 = False  # Aqui já inicia dizendo que ainda não acertou as palavras
 acertou_palavra2 = False
-letras_fora1 = set()
-letras_fora2 = set()
+letras_fora1 = []
+letras_fora2 = []
 
 while tentativas < 7 and not (acertou_palavra1 and acertou_palavra2):  # Enquanto as tentativas forem menores que 7 e não tiver acertado as palavras continua rodando
     tentativa = input(f"Tentativa {tentativas+1}/7: ").upper() # Aqui é a tentativa
@@ -49,7 +49,7 @@ while tentativas < 7 and not (acertou_palavra1 and acertou_palavra2):  # Enquant
                 resultado1.append(f"{AMARELO}{letra}{RESET}")
             else:
                 resultado1.append(f"{VERMELHO}{letra}{RESET}")
-                letras_fora1.add(letra)
+                letras_fora1.append(letra)
         else:
             resultado1.append(letra)
         
@@ -61,7 +61,7 @@ while tentativas < 7 and not (acertou_palavra1 and acertou_palavra2):  # Enquant
                 resultado2.append(f"{AMARELO}{letra}{RESET}")
             else:
                 resultado2.append(f"{VERMELHO}{letra}{RESET}")
-                letras_fora2.add(letra)
+                letras_fora2.append(letra)
         else:
             resultado2.append(letra)
     
