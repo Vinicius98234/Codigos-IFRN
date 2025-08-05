@@ -1,3 +1,5 @@
+# Código feito por Vinicius Gabriel de Souza Praxedes e Pedro Henrique Brandão
+
 import random
 
 # Cores

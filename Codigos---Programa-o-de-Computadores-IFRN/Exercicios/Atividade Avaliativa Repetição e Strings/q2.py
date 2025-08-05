@@ -1,3 +1,5 @@
+# Código feito por Vinicius Gabriel de Souza Praxedes e Pedro Henrique Brandão
+
 try:
     count  = 0 # Inicializa o contador de números palíndromos
     for num in range(10,100000+1): # Percorre os números de 10 a 100000
