@@ -107,11 +107,10 @@ while tentativas < 7 and not (acertou_palavra1 and acertou_palavra2): # Enquanto
         if not acertou_palavra1 and tentativa == palavra1:
             acertou_palavra1 = True
             print(f"\n✅ Acertou a 1ª palavra: {palavra1}")
-            
         if not acertou_palavra2 and tentativa == palavra2:
             acertou_palavra2 = True
             print(f"\n✅ Acertou a 2ª palavra: {palavra2}")
-            
+        # Acertou as duas palavras
         if acertou_palavra1 and acertou_palavra2:
             print("\nParabéns! Você acertou ambas as palavras!")
             if tentativas == 0:
@@ -128,12 +127,12 @@ while tentativas < 7 and not (acertou_palavra1 and acertou_palavra2): # Enquanto
                 print("Você acertou na sexta tentativa, foi por pouco!")
             break
         
-        tentativas += 1
+        tentativas += 1 # Conta tentativa
 
-    except ValueError as e:
+    except ValueError as e: # Trata os erros de valor
         print(e)
         continue
-    except Exception as e:
+    except Exception as e: # Trata outro tipo de erro
         print(f"Erro inesperado: {e}")
         continue
 
