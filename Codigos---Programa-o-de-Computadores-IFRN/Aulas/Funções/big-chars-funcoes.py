@@ -23,25 +23,29 @@ def extrair_letra(letra):
     '''
     Esta função retorna uma lista de 16 strings correspondentes
     apenas à letra recebida como parâmetro
-    '''    
-    return [
-"               AAA               ",
-"              A:::A              ", 
-"             A:::::A             ",
-"            A:::::::A            ",
-"           A:::::::::A           ",
-"          A:::::A:::::A          ",
-"         A:::::A A:::::A         ",
-"        A:::::A   A:::::A        ",
-"       A:::::A     A:::::A       ",
-"      A:::::AAAAAAAAA:::::A      ",
-"     A:::::::::::::::::::::A     ",
-"    A:::::AAAAAAAAAAAAA:::::A    ",
-"   A:::::A             A:::::A   ",
-"  A:::::A               A:::::A  ",
-" A:::::A                 A:::::A ",
-"AAAAAAA                   AAAAAAA"
-    ]
+    '''
+    indice = ALFABETO.index(letra)
+    
+    # Largura fixa de cada letra (contando os espaços)
+    largura = 30
+    
+    # Calcula a posição inicial
+    inicio = indice * largura
+    
+    # Lista para armazenar as linhas da letra
+    letra_extraida = []
+    
+    # Para cada uma das 16 linhas no bigchars
+    for linha in bigchars:
+        # Extrai a parte correspondente à letra
+        parte = linha[inicio:inicio+largura]
+        # Remove espaços em branco à direita
+        parte = parte.rstrip()
+        # Adiciona à lista
+        letra_extraida.append(parte)
+    
+    return letra_extraida 
+    
 
 def gera_letras_big():
     global letras_big
@@ -51,7 +55,7 @@ def gera_letras_big():
     
 def main():
     gera_letras_big()
-    nome = input ("Digite seu nome: ")
+    nome = input ("Digite seu nome: ").upper()
     for pos in range(16): 
         for letra in nome:
             print (letras_big[letra][pos], end="")
