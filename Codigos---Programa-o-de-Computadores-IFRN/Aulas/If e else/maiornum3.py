@@ -1,20 +1,18 @@
 print("Codigo para saber qual número maior: ")
-n1 = int(input("Digite um número qualquer: "))
-n2 = int(input("Digite um número qualquer: "))
-n3 = int(input("Digite um número qualquer: "))
+a = int(input("Digite um número qualquer: "))
+b = int(input("Digite um número qualquer: "))
+c = int(input("Digite um número qualquer: "))
 
-if n1 > n2 and n1 > n3:
-    print(f"{n1} é o maior número: ")
-else:
-    if n2 > n1 and n2 > n3:
-        print(f"{n2} é o maior número: ")
-    else:
-        print(f"{n3} é o maior número: ")
+menor = a
+if b < a and b < c:
+    menor = b
+if c < a and c < b:
+    menor = c
 
-if n1 < n2 and n1 < n3:
-    print(f"{n1} é o menor número: ")
-else:
-    if n2 < n1 and n2 < n3:
-        print(f"{n2} é o menor número: ")
-    else:
-        print(f"{n3} é o menor número: ")
+maior = a
+if b > a and b > c:
+    maior = b
+if c > a and c > b:
+    maior = c
+
+print(f"O menor número é {menor} e o maior número é {maior}")
