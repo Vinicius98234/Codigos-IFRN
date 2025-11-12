@@ -1,0 +1,10 @@
+Texto a validar,Bits em zero,Nonce,Tempo (em s)
+Esse é fácil,8,96,0.000000
+Esse é fácil,10,1233,0.001729
+Esse é fácil,15,21712,0.037130
+Texto maior muda o tempo?,8,538,0.001294
+Texto maior muda o tempo?,10,1632,0.002774
+Texto maior muda o tempo?,15,97592,0.166394
+É possível calcular esse?,18,58126,0.093827
+É possível calcular esse?,19,58126,0.090003
+É possível calcular esse?,20,580439,0.882148
