@@ -1,9 +1,10 @@
 import socket
 import os
+import time
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind(("", 20000))
-sock.settimeout(30.0)  
+ 
 PASTA_SERVER = "server"
 
 while True:
@@ -40,6 +41,7 @@ while True:
                 dados = arquivo.read(4096)
                 sock.sendto(dados, src)
                 enviados += len(dados)
+                time.sleep(0.1)
 
             print(f"Conteúdo do arquivo enviado ({enviados} bytes)")
     else:
