@@ -1,10 +1,10 @@
 import socket
 
-HOST = '192.168.1.6'
+HOST = '10.25.3.43'
 PORT = 20000  
 
 udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-udp_socket.settimeout(10.0)  
+
 
 nome_arq = input("Nome arquivo = ")
 tam_nome = len(nome_arq)
